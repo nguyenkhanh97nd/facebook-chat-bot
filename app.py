@@ -8,6 +8,10 @@ from event import message, postback, referral
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "Welcome!!!"
+
 @app.route("/webhook", methods=["GET", "POST"])
 def listen_webhook():
     if request.method == "GET":
